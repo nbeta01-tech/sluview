@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SLUview — Mini‑Yelp for SLU</title>
+    <link rel="stylesheet" href="slu.css" />
+    <meta
+      name="description"
+      content="SLUview: a mini‑Yelp replica to practice responsive layout and scraped review integration."
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">★</span>
+        <h1>SLUview</h1>
+      </div>
+      <nav class="topnav" aria-label="Primary">
+        <a href="#filters">Filters</a>
+        <a href="#featured">Featured</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- Column A: Filters / Navigation -->
+      <aside id="filters" class="panel filters" aria-labelledby="filters-title">
+        <h2 id="filters-title">Filter</h2>
+
+        <label for="cat">Category</label>
+        <select id="cat" name="category">
+          <option>All</option>
+          <option>Restaurants</option>
+          <option>Hotels</option>
+          <option>Coffee &amp; Tea</option>
+          <option>Nightlife</option>
+          <option>Shopping</option>
+        </select>
+
+        <label for="price">Price</label>
+        <select id="price" name="price">
+          <option>$</option>
+          <option>$$</option>
+          <option>$$$</option>
+          <option>$$$$</option>
+        </select>
+
+        <label for="minrating">Min Rating</label>
+        <input
+          id="minrating"
+          type="number"
+          min="1"
+          max="5"
+          step="0.1"
+          placeholder="4.0"
+        />
+
+        <p class="hint">Filters are decorative only for this assignment.</p>
+      </aside>
+
+      <!-- Column B: Featured Businesses -->
+      <section
+        id="featured"
+        class="panel businesses"
+        aria-labelledby="featured-title"
+      >
+        <h2 id="featured-title">Featured Businesses</h2>
+
+        <article class="card biz-card">
+          <h3 class="biz-name">Coffee House A</h3>
+          <p class="meta">
+            Coffee &amp; Tea · St. Louis, MO · $$ ·
+            <span aria-label="rating">★ 4.5</span>
+          </p>
+          <p class="blurb">Neighborhood spot with pour-over and pastries.</p>
+        </article>
+
+        <article class="card biz-card">
+          <h3 class="biz-name">City Bistro</h3>
+          <p class="meta">
+            Restaurants · St. Louis, MO · $$$ ·
+            <span aria-label="rating">★ 4.2</span>
+          </p>
+          <p class="blurb">
+            Seasonal menu with local ingredients and patio seating.
+          </p>
+        </article>
+
+        <article class="card biz-card">
+          <h3 class="biz-name">Riverfront Hotel</h3>
+          <p class="meta">
+            Hotels · St. Louis, MO · $$$ ·
+            <span aria-label="rating">★ 4.1</span>
+          </p>
+          <p class="blurb">
+            Modern rooms, Mississippi views, and free breakfast.
+          </p>
+        </article>
+      </section>
+
+      <!-- Column C: Latest Reviews -->
+      <section
+        id="reviews"
+        class="panel reviews"
+        aria-labelledby="reviews-title"
+      >
+        <h2 id="reviews-title">Latest Reviews</h2>
+        <div class="cards">
+          <!-- Static fallback (required for all students). JS will replace with data.json at runtime if enabled. -->
+          <article class="card review-card">
+            <p class="review-meta">
+              <strong>static Jane D.</strong> · ★ 4.0 · 2025-09-01
+            </p>
+            <p>Loved the latte art! Service was quick. Will return.</p>
+          </article>
+
+          <article class="card review-card">
+            <p class="review-meta">
+              <strong>static Mike P.</strong> · ★ 4.5 · 2025-08-22
+            </p>
+            <p>Amazing food and patio seating at City Bistro.</p>
+          </article>
+
+          <article class="card review-card">
+            <p class="review-meta">
+              <strong>static Sarah L.</strong> · ★ 5.0 · 2025-08-15
+            </p>
+            <p>The hotel breakfast was top-notch!</p>
+          </article>
+
+          <article class="card review-card">
+            <p class="review-meta">
+              <strong>static Tom H.</strong> · ★ 3.8 · 2025-08-10
+            </p>
+            <p>Coffee was decent, but the place was crowded.</p>
+          </article>
+
+          <article class="card review-card">
+            <p class="review-meta">
+              <strong>static Emma W.</strong> · ★ 4.3 · 2025-08-05
+            </p>
+            <p>Friendly staff and cozy atmosphere.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2025 SLUview · Built for the Mini‑Yelp assignment.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
